@@ -49,6 +49,7 @@
 		18B5C2572AC2F9D600E1BAE0 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5C2562AC2F9D600E1BAE0 /* FirebaseRemoteConfigSwift */; };
 		18B5C2592AC2F9D600E1BAE0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5C2582AC2F9D600E1BAE0 /* FirebaseStorage */; };
 		18B5C25B2AC2F9D600E1BAE0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5C25A2AC2F9D600E1BAE0 /* FirebaseStorageCombine-Community */; };
+		18B5C25D2AC35FEA00E1BAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		18B5C21D2AC20F3100E1BAE0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		18B5C2202AC20F5C00E1BAE0 /* ViewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPostViewController.swift; sourceTree = "<group>"; };
 		18B5C2222AC20F6E00E1BAE0 /* CreateNewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPostViewController.swift; sourceTree = "<group>"; };
+		18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				18B5C1FE2AC20B3100E1BAE0 /* Assets.xcassets */,
+				18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */,
 				18B5C1F52AC20B2F00E1BAE0 /* AppDelegate.swift */,
 				18B5C1F72AC20B2F00E1BAE0 /* SceneDelegate.swift */,
 			);
@@ -304,6 +307,7 @@
 			files = (
 				18B5C2022AC20B3100E1BAE0 /* LaunchScreen.storyboard in Resources */,
 				18B5C1FF2AC20B3100E1BAE0 /* Assets.xcassets in Resources */,
+				18B5C25D2AC35FEA00E1BAE0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
