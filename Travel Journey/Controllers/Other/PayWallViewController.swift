@@ -97,11 +97,19 @@ class PayWallViewController: UIViewController {
         
     }
     @objc private func didTapSubscribe() {
-        
+        IAPManager.shared.subscribe() { [weak self] success in
+            print("Purchase: \(success)")
+                self?.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc private func didTapRestore() {
-        
+        IAPManager.shared.restorePurchases() { [weak self] success in
+            print("Purchase: \(success)")
+            DispatchQueue.main.async {
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     private func setUpCloseButton() {

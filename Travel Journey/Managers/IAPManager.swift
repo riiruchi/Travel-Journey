@@ -4,7 +4,6 @@
 //
 //  Created by Ruchira  on 26/09/23.
 //
-
 import Foundation
 
 final class IAPManager {
@@ -13,14 +12,22 @@ final class IAPManager {
     private init() {}
     
     func isPremium() -> Bool {
-        return false
+        return UserDefaults.standard.bool(forKey: "premium")
     }
     
-    func subscribe() {
-        
+    public func getSubscriptionStatus(completion: ((Bool) -> Void)?) {
+        UserDefaults.standard.set(true, forKey: "premium")
+        completion?(true)
+        return
     }
     
-    func restorePurchases() {
-        
+    public func subscribe(completion: @escaping (Bool) -> Void){
+        UserDefaults.standard.set(true, forKey: "premium")
+        completion(true)
+    }
+    
+    public func restorePurchases(completion: @escaping (Bool) -> Void) {
+        UserDefaults.standard.set(true, forKey: "premium")
+        completion(true)
     }
 }
