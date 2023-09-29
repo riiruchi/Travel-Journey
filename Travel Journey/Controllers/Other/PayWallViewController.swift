@@ -13,7 +13,10 @@ class PayWallViewController: UIViewController {
     private let header = PayWallHeaderView()
     
     private let heroView = PayWallDescriptionVIew()
-        
+    
+   // Pricing and Product Info
+   // CTA Buttons
+    
     private let buyButton: UIButton = {
         let button = UIButton()
         button.setTitle("Subscribe", for: .normal)
@@ -97,6 +100,7 @@ class PayWallViewController: UIViewController {
         IAPManager.shared.subscribe() { [weak self] success in
             print("Purchase: \(success)")
                 self?.dismiss(animated: true, completion: nil)
+
         }
     }
     
