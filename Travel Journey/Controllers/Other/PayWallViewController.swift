@@ -15,7 +15,6 @@ class PayWallViewController: UIViewController {
     private let heroView = PayWallDescriptionVIew()
     
    // Pricing and Product Info
-   // CTA Buttons
     
     private let buyButton: UIButton = {
         let button = UIButton()
