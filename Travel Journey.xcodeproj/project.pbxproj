@@ -52,6 +52,9 @@
 		18B5C25D2AC35FEA00E1BAE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */; };
 		18B5C2712AC3711200E1BAE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2702AC3711200E1BAE0 /* User.swift */; };
 		18B5C2732AC3712100E1BAE0 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2722AC3712100E1BAE0 /* BlogPost.swift */; };
+		18B5C2762AC448B700E1BAE0 /* PayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2752AC448B700E1BAE0 /* PayWallViewController.swift */; };
+		18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */; };
+		18B5C27A2AC456C600E1BAE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2792AC456C600E1BAE0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,9 @@
 		18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18B5C2702AC3711200E1BAE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18B5C2722AC3712100E1BAE0 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		18B5C2752AC448B700E1BAE0 /* PayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewController.swift; sourceTree = "<group>"; };
+		18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
+		18B5C2792AC456C600E1BAE0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 				18B5C25C2AC35FEA00E1BAE0 /* GoogleService-Info.plist */,
 				18B5C1F52AC20B2F00E1BAE0 /* AppDelegate.swift */,
 				18B5C1F72AC20B2F00E1BAE0 /* SceneDelegate.swift */,
+				18B5C2792AC456C600E1BAE0 /* Extensions.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 		18B5C20A2AC20D9200E1BAE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18B5C2742AC4487300E1BAE0 /* Other */,
 				18B5C21C2AC20F1700E1BAE0 /* Auth */,
 				18B5C20B2AC20DAB00E1BAE0 /* Core tabs */,
 				18B5C21F2AC20F3B00E1BAE0 /* Posts */,
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				18B5C2002AC20B3100E1BAE0 /* LaunchScreen.storyboard */,
+				18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +228,14 @@
 				18B5C2722AC3712100E1BAE0 /* BlogPost.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		18B5C2742AC4487300E1BAE0 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				18B5C2752AC448B700E1BAE0 /* PayWallViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,10 +342,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B5C2732AC3712100E1BAE0 /* BlogPost.swift in Sources */,
+				18B5C27A2AC456C600E1BAE0 /* Extensions.swift in Sources */,
 				18B5C21E2AC20F3100E1BAE0 /* SignUpViewController.swift in Sources */,
 				18B5C2122AC20E7400E1BAE0 /* IAPManager.swift in Sources */,
 				18B5C2162AC20E9C00E1BAE0 /* AuthManager.swift in Sources */,
 				18B5C1FA2AC20B2F00E1BAE0 /* HomeViewController.swift in Sources */,
+				18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */,
 				18B5C2182AC20EAE00E1BAE0 /* StorageManager.swift in Sources */,
 				18B5C1F62AC20B2F00E1BAE0 /* AppDelegate.swift in Sources */,
 				18B5C2712AC3711200E1BAE0 /* User.swift in Sources */,
@@ -339,6 +358,7 @@
 				18B5C21B2AC20F0D00E1BAE0 /* SignInViewController.swift in Sources */,
 				18B5C2142AC20E8A00E1BAE0 /* DatabaseManager.swift in Sources */,
 				18B5C2212AC20F5C00E1BAE0 /* ViewPostViewController.swift in Sources */,
+				18B5C2762AC448B700E1BAE0 /* PayWallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,5 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
     }
-
-
 }
 
