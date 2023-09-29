@@ -55,6 +55,7 @@
 		18B5C2762AC448B700E1BAE0 /* PayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2752AC448B700E1BAE0 /* PayWallViewController.swift */; };
 		18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */; };
 		18B5C27A2AC456C600E1BAE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2792AC456C600E1BAE0 /* Extensions.swift */; };
+		18B5C27C2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		18B5C2752AC448B700E1BAE0 /* PayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewController.swift; sourceTree = "<group>"; };
 		18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
 		18B5C2792AC456C600E1BAE0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallDescriptionVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				18B5C2002AC20B3100E1BAE0 /* LaunchScreen.storyboard */,
 				18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */,
+				18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				18B5C2142AC20E8A00E1BAE0 /* DatabaseManager.swift in Sources */,
 				18B5C2212AC20F5C00E1BAE0 /* ViewPostViewController.swift in Sources */,
 				18B5C2762AC448B700E1BAE0 /* PayWallViewController.swift in Sources */,
+				18B5C27C2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
