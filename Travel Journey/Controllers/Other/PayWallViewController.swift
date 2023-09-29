@@ -13,9 +13,7 @@ class PayWallViewController: UIViewController {
     private let header = PayWallHeaderView()
     
     private let heroView = PayWallDescriptionVIew()
-    
-   // Pricing and Product Info
-    
+        
     private let buyButton: UIButton = {
         let button = UIButton()
         button.setTitle("Subscribe", for: .normal)
