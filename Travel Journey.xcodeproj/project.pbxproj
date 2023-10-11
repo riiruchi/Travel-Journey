@@ -56,6 +56,7 @@
 		18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */; };
 		18B5C27A2AC456C600E1BAE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C2792AC456C600E1BAE0 /* Extensions.swift */; };
 		18B5C27C2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */; };
+		18B5C27E2AD7054E00E1BAE0 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5C27D2AD7054E00E1BAE0 /* SignInHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
 		18B5C2792AC456C600E1BAE0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallDescriptionVIew.swift; sourceTree = "<group>"; };
+		18B5C27D2AD7054E00E1BAE0 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				18B5C2002AC20B3100E1BAE0 /* LaunchScreen.storyboard */,
 				18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */,
 				18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */,
+				18B5C27D2AD7054E00E1BAE0 /* SignInHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */,
 				18B5C2182AC20EAE00E1BAE0 /* StorageManager.swift in Sources */,
 				18B5C1F62AC20B2F00E1BAE0 /* AppDelegate.swift in Sources */,
+				18B5C27E2AD7054E00E1BAE0 /* SignInHeaderView.swift in Sources */,
 				18B5C2712AC3711200E1BAE0 /* User.swift in Sources */,
 				18B5C20D2AC20DD400E1BAE0 /* ProfileViewController.swift in Sources */,
 				18B5C2232AC20F6E00E1BAE0 /* CreateNewPostViewController.swift in Sources */,
