@@ -84,7 +84,10 @@ class SignInViewController: UITabBarController {
     }
     
     @objc func didTapCreateAccount() {
-        
+        let vc = SignUpViewController()
+        vc.title = "Create Account"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
