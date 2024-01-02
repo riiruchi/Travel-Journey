@@ -62,15 +62,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.tableHeaderView = headerView
     
     //Profile Picture
-        let profilePhoto = UIImageView(image: UIImage(systemName: "person"))
+        let profilePhoto = UIImageView(image: UIImage(systemName: "person.circle"))
         profilePhoto.tintColor = .white
         profilePhoto.contentMode = .scaleAspectFit
-        profilePhoto.frame = CGRect(x: (view.width-(view.width/4))/2,
-                                    y: (headerView.height-(view.width/4))/2.5,
-                                    width: view.width/4,
-                                    height: view.width/4
+        profilePhoto.frame = CGRect(
+            x: (view.width-(view.width/4))/2,
+            y: (headerView.height-(view.width/4))/2.5,
+            width: view.width/4,
+            height: view.width/4
         )
+        profilePhoto.layer.masksToBounds = true
+        profilePhoto.layer.cornerRadius = profilePhoto.width/2
+        profilePhoto.isUserInteractionEnabled = true
         headerView.addSubview(profilePhoto)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProfilePhoto))
+        profilePhoto.addGestureRecognizer(tap)
     
         
     //Email
@@ -90,8 +96,40 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         if let ref = profilePhotoRef {
             // Fetch image
+            StorageManager.shared.downloadUrlForProfilePicture(path: ref) { url in
+                guard let url = url else {
+                    return
+                }
+                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                    guard let data = data else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        profilePhoto.image = UIImage(data: data)     
+                    }
+                }
+                
+                task.resume()
+            }
         }
     }
+    
+    @objc private func didTapProfilePhoto(){
+        guard let myEmail = UserDefaults.standard.string(forKey: "email"),
+              myEmail == currentEmail else {
+                return
+        }
+        
+        
+        
+        
+    let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
     private func fetchProfileData(){
         DatabaseManager.shared.getUser(email: currentEmail) { [weak self] user in
             guard let user = user else {
@@ -143,15 +181,59 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // TableView
-   
+    
+    private var post: [BlogPost] = []
+    
+    private func fetchPosts(){
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return post.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = post[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "Blog post goes here!"
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ViewPostViewController()
+        vc.title = post[indexPath.row].title
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true,completion: nil)
+        guard let image = info[.editedImage] as? UIImage else {
+            return
+        }
+        
+        StorageManager.shared.uploadUserProfilePicture(
+            email: currentEmail,
+            image: image
+        ) { [weak self]success in
+            guard let strongSelf = self else { return }
+            if success {
+                // Update database
+                DatabaseManager.shared.updateProfilePhoto(email: strongSelf.currentEmail){updated in
+                    guard updated else{
+                        return
+                    }
+                    DispatchQueue.main.async{
+                        strongSelf.fetchProfileData()
+                    }
+                }
+                
+            }
+        }
+    }
 }

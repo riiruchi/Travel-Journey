@@ -74,4 +74,28 @@ final class DatabaseManager {
                 completion(user)
             }
     }
+    
+    func updateProfilePhoto(email:String, completion: @escaping (Bool) -> Void
+    ){
+        let path = email
+            .replacingOccurrences(of: "@", with: "_")
+            .replacingOccurrences(of: ".", with: "_")
+        
+        let photoReference = "profile_pictures/\(path)/photo.png"
+        
+        let dbRef = database
+            .collection("users")
+            .document(path)
+        
+        dbRef.getDocument { snapshot, error in
+            guard var data = snapshot?.data(), error == nil else{
+                return
+            }
+            data["profile_photo"] = photoReference
+            
+            dbRef.setData(data) { error in
+                completion(error == nil)
+            }
+        }
+    }
 }
