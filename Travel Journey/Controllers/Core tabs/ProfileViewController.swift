@@ -120,10 +120,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return
         }
         
-        
-        
-        
-    let picker = UIImagePickerController()
+        let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true

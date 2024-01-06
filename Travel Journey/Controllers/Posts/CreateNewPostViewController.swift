@@ -47,9 +47,12 @@ class CreateNewPostViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        view.addSubview(titleField)
         view.addSubview(headerImageView)
         view.addSubview(textView)
+        view.addSubview(titleField)
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(didTapHeader))
+        headerImageView.addGestureRecognizer(tap)
         configureButton()
     }
     
@@ -68,6 +71,13 @@ class CreateNewPostViewController: UITabBarController {
                                 y: headerImageView.bottom+10,
                                 width: view.width-20,
                                 height: view.height-210-view.safeAreaInsets.top)
+    }
+    
+    @objc private func didTapHeader() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
     private func configureButton() {
@@ -101,11 +111,22 @@ class CreateNewPostViewController: UITabBarController {
             return
         }
         
-//        let post = BlogPost(identifier: <#T##String#>,
-//                            title: <#T##String#>,
-//                            timeStamp: <#T##TimeInterval#>,
-//                            headerImageUrl: <#T##URL?#>,
-//                            text: <#T##String#>
-//       )
+        let post = BlogPost(identifier: UUID().uuidString,
+                            title: title,
+                            timeStamp: Date().timeIntervalSince1970,
+                            headerImageUrl: nil,
+                            text: body
+       )
     }
 }
+
+extension CreateNewPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
+}
+
