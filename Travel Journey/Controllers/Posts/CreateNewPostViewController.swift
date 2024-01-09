@@ -27,6 +27,7 @@ class CreateNewPostViewController: UITabBarController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.isUserInteractionEnabled = true
+        imageView.clipsToBounds = true
         imageView.image = UIImage(systemName: "photo")
         imageView.backgroundColor = .tertiarySystemBackground
         return imageView
@@ -106,17 +107,63 @@ class CreateNewPostViewController: UITabBarController {
         guard let title = titleField.text,
               let body = textView.text,
               let headerImage = selectedHeaderImage,
+              let email = UserDefaults.standard.string(forKey: "email"),
               !title.trimmingCharacters(in: .whitespaces).isEmpty,
               !body.trimmingCharacters(in: .whitespaces).isEmpty else {
+            
+            let alert = UIAlertController(title: "Enter Post Details",
+                                          message: "Please enter a title, body and select a image to continue.",
+                                          preferredStyle: .alert
+            )
+            
+            alert.addAction(UIAlertAction(title: "Dismiss",
+                                          style: .cancel,
+                                          handler: nil)
+            )
+            present(alert, animated: true)
             return
         }
         
-        let post = BlogPost(identifier: UUID().uuidString,
-                            title: title,
-                            timeStamp: Date().timeIntervalSince1970,
-                            headerImageUrl: nil,
-                            text: body
-       )
+        print("Starting post...")
+        
+        let newPostId = UUID().uuidString
+        
+        //Upload header image
+        StorageManager.shared.uploadBlogHeaderImage(
+            email: email,
+            image: headerImage,
+            postId: newPostId
+        ) { success in
+            guard success else {
+                return
+            }
+            StorageManager.shared.downloadUrlForPostHeader(email: email,
+                                                           postId: newPostId
+            ) { url in
+                guard let headerUrl = url else {
+                    print("failed to upload url for header")
+                    return
+                }
+                //Insert of post into DB
+                let post = BlogPost(identifier: UUID().uuidString,
+                                    title: title,
+                                    timeStamp: Date().timeIntervalSince1970,
+                                    headerImageUrl: nil,
+                                    text: body
+               )
+                
+                DatabaseManager.shared.insert(blogPost: post, email: email) { [weak self] posted in
+                    guard posted else {
+                        print("Failed to post new Blog Article")
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.didTapCancel()
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -126,7 +173,12 @@ extension CreateNewPostViewController: UIImagePickerControllerDelegate, UINaviga
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[.originalImage] as? UIImage  else {
+            return
+        }
+        selectedHeaderImage = image
+        headerImageView.image = image
     }
 }
 
