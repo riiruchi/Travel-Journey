@@ -148,7 +148,7 @@ class CreateNewPostViewController: UITabBarController {
                 let post = BlogPost(identifier: UUID().uuidString,
                                     title: title,
                                     timeStamp: Date().timeIntervalSince1970,
-                                    headerImageUrl: nil,
+                                    headerImageUrl: headerUrl,
                                     text: body
                )
                 

@@ -27,7 +27,7 @@ final class DatabaseManager {
             "id": blogPost.identifier,
             "title": blogPost.title,
             "body": blogPost.text,
-            "Created": blogPost.timeStamp,
+            "created": blogPost.timeStamp,
             "headerImageUrl": blogPost.headerImageUrl?.absoluteString ?? ""
         ]
         
@@ -35,7 +35,8 @@ final class DatabaseManager {
             .collection("users")
             .document(userEmail)
             .collection("posts")
-            .addDocument(data: data) { error in
+            .document(blogPost.identifier)
+            .setData(data) { error in
                 completion(error == nil)
             }
     }
@@ -44,9 +45,38 @@ final class DatabaseManager {
         
     }
     
-    public func getPosts(for user: User,
-                         completion: @escaping (String) -> Void) {
-        
+    public func getPosts(for email: String, completion: @escaping ([BlogPost]) -> Void) {
+        let userEmail = email.replacingOccurrences(of: ".", with: "_")
+                             .replacingOccurrences(of: "@", with: "_")
+        database.collection("users")
+                .document(userEmail)
+                .collection("posts")
+                .getDocuments { snapshot, error in
+                    guard let documents = snapshot?.documents.compactMap({ $0.data() }), error == nil else {
+                              return
+                    }
+                    print("no of document - \(documents.count)")
+                    let posts: [BlogPost] = documents.compactMap({ dictionary in
+                        guard let id = dictionary["id"] as? String,
+                              let title = dictionary["title"] as? String,
+                              let body = dictionary["body"] as? String,
+                              let created = dictionary["created"] as? Double,
+                              let imageUrlString = dictionary["headerImageUrl"] as? String else {
+                            return nil
+                        }
+                             
+                        
+                        let post = BlogPost(identifier: id,
+                                            title: title,
+                                            timeStamp: created,
+                                            headerImageUrl: URL(string: imageUrlString),
+                                            text: body)
+                        
+                        return post
+                        
+                    })
+                    completion(posts)
+                }
     }
     
     public func insert(user: User,
