@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183053C12B5180090087AF7C /* PostPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183053C02B5180090087AF7C /* PostPreviewTableViewCell.swift */; };
+		183053C32B51802F0087AF7C /* PostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183053C22B51802F0087AF7C /* PostHeaderTableViewCell.swift */; };
 		183B6F2C2B502D7B004586FC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 183B6F2B2B502D7B004586FC /* FirebaseAnalytics */; };
 		183B6F2E2B502D7B004586FC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 183B6F2D2B502D7B004586FC /* FirebaseAnalyticsOnDeviceConversion */; };
 		183B6F302B502D7B004586FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 183B6F2F2B502D7B004586FC /* FirebaseAnalyticsSwift */; };
@@ -65,6 +67,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183053C02B5180090087AF7C /* PostPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		183053C22B51802F0087AF7C /* PostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		18B5C1F22AC20B2F00E1BAE0 /* Travel Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B5C1F52AC20B2F00E1BAE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B5C1F72AC20B2F00E1BAE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183053BF2B517F920087AF7C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				183053C02B5180090087AF7C /* PostPreviewTableViewCell.swift */,
+				183053C22B51802F0087AF7C /* PostHeaderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		18B5C1E92AC20B2F00E1BAE0 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +224,7 @@
 		18B5C2192AC20ECB00E1BAE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				183053BF2B517F920087AF7C /* Cells */,
 				18B5C2002AC20B3100E1BAE0 /* LaunchScreen.storyboard */,
 				18B5C2772AC4543C00E1BAE0 /* PayWallHeaderView.swift */,
 				18B5C27B2AC6EC4E00E1BAE0 /* PayWallDescriptionVIew.swift */,
@@ -370,10 +384,12 @@
 				18B5C1FA2AC20B2F00E1BAE0 /* HomeViewController.swift in Sources */,
 				18B5C2782AC4543C00E1BAE0 /* PayWallHeaderView.swift in Sources */,
 				18B5C2182AC20EAE00E1BAE0 /* StorageManager.swift in Sources */,
+				183053C32B51802F0087AF7C /* PostHeaderTableViewCell.swift in Sources */,
 				18B5C1F62AC20B2F00E1BAE0 /* AppDelegate.swift in Sources */,
 				18B5C27E2AD7054E00E1BAE0 /* SignInHeaderView.swift in Sources */,
 				18B5C2712AC3711200E1BAE0 /* User.swift in Sources */,
 				18B5C20D2AC20DD400E1BAE0 /* ProfileViewController.swift in Sources */,
+				183053C12B5180090087AF7C /* PostPreviewTableViewCell.swift in Sources */,
 				18B5C2232AC20F6E00E1BAE0 /* CreateNewPostViewController.swift in Sources */,
 				18B5C20F2AC20E2D00E1BAE0 /* TabBarViewController.swift in Sources */,
 				18B5C1F82AC20B2F00E1BAE0 /* SceneDelegate.swift in Sources */,
