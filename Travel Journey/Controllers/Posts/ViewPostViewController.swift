@@ -62,6 +62,7 @@ class ViewPostViewController: UITabBarController, UITableViewDataSource, UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.selectionStyle = .none
             cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.font = .systemFont(ofSize: 25, weight: .bold)
             cell.textLabel?.text = post.title
             return cell
             
