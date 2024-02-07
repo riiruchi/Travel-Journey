@@ -91,7 +91,7 @@ class ViewPostViewController: UITabBarController, UITableViewDataSource, UITable
                 fatalError()
         }
     }
-    
+    //new
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let index = indexPath.row
         switch index {
