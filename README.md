@@ -1,4 +1,4 @@
-# iOS Blog App
+# Travel Journey App
 
 ![App Logo](https://github.com/riiruchi/Travel-Journey/blob/main/Travel%20Journey/Others/Assets.xcassets/AppIcon.appiconset/icon-60%403x.png)
 
