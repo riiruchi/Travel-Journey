@@ -33,7 +33,7 @@ jobs:
           xcodebuild -resolvePackageDependencies
 
       - name: Build
-          run: xcodebuild -project 'Travel Journey.xcodeproj' -scheme 'Travel Journey' -destination 'generic/platform=iOS' build
+        run: xcodebuild -project 'Travel Journey.xcodeproj' -scheme 'Travel Journey' -destination 'platform=iOS Simulator,name=iPhone 12' build
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v2
