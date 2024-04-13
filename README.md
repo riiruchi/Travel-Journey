@@ -120,6 +120,3 @@ Create a new branch: git checkout -b feature/new-feature.
 Make your changes and commit them: git commit -m 'Add new feature'.
 Push to the branch: git push origin feature/new-feature.
 Submit a pull request.
-
-## License
-This project is licensed under the MIT License.
