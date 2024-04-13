@@ -32,7 +32,6 @@ The iOS Travel-Journey App is a feature-rich application that empowers users to 
 Before you begin, ensure you have the following prerequisites:
 
 - [Xcode](https://developer.apple.com/xcode/) installed on your machine
-- [CocoaPods](https://cocoapods.org/) for dependency management
 
 ### Installation
 
