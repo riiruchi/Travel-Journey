@@ -45,12 +45,7 @@ Before you begin, ensure you have the following prerequisites:
    ``` bash
    cd Travel-Journey
 
-3. Install dependencies using CocoaPods:
-
-   ``` bash
-   pod install
-
-4. Open the Xcode workspace:
+3. Open the Xcode workspace:
 
    ``` bash
    open Travel Journey.xcworkspace
