@@ -15,7 +15,6 @@ The iOS Travel-Journey App is a feature-rich application that empowers users to 
 - [Continuous Integration and Continuous Deployment (CI/CD)](#ContinuousIntegrationandContinuousDeployment(CI/CD))
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
